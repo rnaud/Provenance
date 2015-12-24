@@ -74,6 +74,5 @@
 - (BOOL)loadStateFromFileAtPath:(NSString *)path;
 
 - (void)setCheat:(NSString *)code setType:(NSString *)type setEnabled:(BOOL)enabled;
-- (void)clearCheats;
 
 @end

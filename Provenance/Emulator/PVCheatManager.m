@@ -32,10 +32,7 @@
 }
 -(void)removeCheat:(NSString*)cheat {
     [self.cheats removeObject:cheat];
-    [self.core clearCheats];
-    for (NSString* cheat in self.cheats) {
-        [self.core setCheat:cheat setType:nil setEnabled:YES];
-    }
+    [self.core setCheat:cheat setType:nil setEnabled:NO];
 }
 -(BOOL)hasActiveCheat:(NSString*)cheat {
     return [self.cheats containsObject:cheat];
@@ -50,12 +47,16 @@
 }
 
 -(NSArray*)availableCheats {
-    return @[
-             @{@"name": @"Everyone is a ghost",
-               @"description": @"Everyone is a ghost on the track",
-               @"code": @"67EB-CDA4"
-        }
-    ];
+    if ([[self.game md5Hash] isEqualToString:@""]) {
+        return @[
+                 @{@"name": @"Everyone is a ghost",
+                   @"description": @"Everyone is a ghost on the track",
+                   @"code": @"67EB-CDA4"
+                   }
+                 ];
+    } else {
+        return @[];
+    }
 }
 
 @end

@@ -326,8 +326,4 @@ static NSTimeInterval defaultFrameInterval = 60.0;
 
 }
 
--(void)clearCheats {
-
-}
-
 @end

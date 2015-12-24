@@ -353,12 +353,12 @@ static void FinalizeSamplesAudioCallback(void *)
         S9xGameGenieToRaw(cheatCode, address, byte);
         S9xProActionReplayToRaw(cheatCode, address, byte);
         
-        S9xAddCheat(TRUE, FALSE, address, byte);
+        if (enabled) {
+            S9xAddCheat(TRUE, FALSE, address, byte);
+        } else {
+            S9xDisableCheat(0); //TODO find the right cheat to disable in memory
+        }
     }
-}
-
--(void)clearCheats {
-    S9xClearCheats();
 }
 
 #pragma mark - Input
