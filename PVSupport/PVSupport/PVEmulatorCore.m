@@ -322,4 +322,12 @@ static NSTimeInterval defaultFrameInterval = 60.0;
 	[self doesNotImplementSelector:_cmd];
 }
 
+- (void)setCheat:(NSString *)code setType:(NSString *)type setEnabled:(BOOL)enabled {
+
+}
+
+-(void)clearCheats {
+
+}
+
 @end

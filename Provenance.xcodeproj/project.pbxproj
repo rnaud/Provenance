@@ -216,6 +216,8 @@
 		42BC83A917E6775E00E9A607 /* PVGameLibrarySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BC83A817E6775E00E9A607 /* PVGameLibrarySectionHeaderView.m */; };
 		42E63AE917E12ECE00FE7098 /* PVSNESControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E63AE817E12ECE00FE7098 /* PVSNESControllerViewController.m */; };
 		42E63F0617DE78AB005802B0 /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E63F0517DE78AB005802B0 /* UIImage+Scaling.m */; };
+		51F1658C1C2B8C80006B0DB7 /* PVCheatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F165891C2B8C80006B0DB7 /* PVCheatManager.m */; };
+		51F1658D1C2B8C80006B0DB7 /* PVCheatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1658B1C2B8C80006B0DB7 /* PVCheatsTableViewController.m */; };
 		7556CF7A19DC15C1007F8F97 /* Default.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7556CF7919DC15C1007F8F97 /* Default.xib */; };
 		E414488B1B3125D90056D80A /* iCadeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E41448891B3125D90056D80A /* iCadeReaderView.m */; };
 		E414488E1B3126190056D80A /* PViCadeGamepad.m in Sources */ = {isa = PBXBuildFile; fileRef = E414488D1B3126190056D80A /* PViCadeGamepad.m */; };
@@ -463,6 +465,10 @@
 		42E63AE817E12ECE00FE7098 /* PVSNESControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSNESControllerViewController.m; sourceTree = "<group>"; };
 		42E63F0417DE78AB005802B0 /* UIImage+Scaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scaling.h"; sourceTree = "<group>"; };
 		42E63F0517DE78AB005802B0 /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
+		51F165881C2B8C80006B0DB7 /* PVCheatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVCheatManager.h; sourceTree = "<group>"; };
+		51F165891C2B8C80006B0DB7 /* PVCheatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVCheatManager.m; sourceTree = "<group>"; };
+		51F1658A1C2B8C80006B0DB7 /* PVCheatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVCheatsTableViewController.h; sourceTree = "<group>"; };
+		51F1658B1C2B8C80006B0DB7 /* PVCheatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVCheatsTableViewController.m; sourceTree = "<group>"; };
 		7556CF7919DC15C1007F8F97 /* Default.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Default.xib; sourceTree = "<group>"; };
 		E41448881B3125D90056D80A /* iCadeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCadeReaderView.h; sourceTree = "<group>"; };
 		E41448891B3125D90056D80A /* iCadeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCadeReaderView.m; sourceTree = "<group>"; };
@@ -592,6 +598,10 @@
 				1A3D433A17B30BA3004DFFFC /* PVGLViewController.m */,
 				1A34C58817D53C9B0058E7D1 /* PVEmulatorConfiguration.h */,
 				1A34C58917D53C9B0058E7D1 /* PVEmulatorConfiguration.m */,
+				51F165881C2B8C80006B0DB7 /* PVCheatManager.h */,
+				51F165891C2B8C80006B0DB7 /* PVCheatManager.m */,
+				51F1658A1C2B8C80006B0DB7 /* PVCheatsTableViewController.h */,
+				51F1658B1C2B8C80006B0DB7 /* PVCheatsTableViewController.m */,
 			);
 			path = Emulator;
 			sourceTree = "<group>";
@@ -1209,6 +1219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3D40A417B2DCE4004DFFFC /* main.m in Sources */,
+				51F1658C1C2B8C80006B0DB7 /* PVCheatManager.m in Sources */,
 				1A9FBE231ABD28DA004E778B /* PVGBAControllerViewController.m in Sources */,
 				1A26EE371AD9FFBF004EA30B /* SSZipArchive.m in Sources */,
 				E41448971B34C4080056D80A /* PViCadeGamepadButtonInput.m in Sources */,
@@ -1272,6 +1283,7 @@
 				1A4850BB1AE1A6C500F7EF2E /* PVConflictViewController.m in Sources */,
 				378F4A151B63F2240065FA39 /* Reachability.m in Sources */,
 				1A5209881BADCBB500DAE6E3 /* PVControllerManager.m in Sources */,
+				51F1658D1C2B8C80006B0DB7 /* PVCheatsTableViewController.m in Sources */,
 				1A9647B117D6864300A55612 /* PVControllerViewController.m in Sources */,
 				E414489D1B34C4E50056D80A /* PViCadeInputAxis.m in Sources */,
 				1ADB316517D9341600DB6043 /* PVGenesisControllerViewController.m in Sources */,

@@ -235,6 +235,12 @@ void S9xAddCheat (bool8 enable, bool8 save_current_value, uint32 address, uint8 
 	}
 }
 
+void S9xClearCheats (void)
+{
+    for (uint32 i = 0; i < Cheat.num_cheats; i++)
+        S9xDeleteCheat(i);
+}
+
 void S9xDeleteCheat (uint32 which1)
 {
 	if (which1 < Cheat.num_cheats)

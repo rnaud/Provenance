@@ -357,6 +357,10 @@ static void FinalizeSamplesAudioCallback(void *)
     }
 }
 
+-(void)clearCheats {
+    S9xClearCheats();
+}
+
 #pragma mark - Input
 
 - (void)pushSNESButton:(PVSNESButton)button forPlayer:(NSInteger)player

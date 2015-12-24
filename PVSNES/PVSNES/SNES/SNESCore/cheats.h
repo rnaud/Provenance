@@ -240,6 +240,7 @@ void S9xApplyCheat (uint32);
 void S9xApplyCheats (void);
 void S9xRemoveCheat (uint32);
 void S9xRemoveCheats (void);
+void S9xClearCheats (void);
 void S9xDeleteCheat (uint32);
 void S9xDeleteCheats (void);
 void S9xEnableCheat (uint32);

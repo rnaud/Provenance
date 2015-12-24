@@ -21,6 +21,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PVEmulatorConfiguration.h"
 #import "PVControllerManager.h"
+#import "PVCheatsTableViewController.h"
+#import "PVCheatManager.h"
 
 @interface PVEmulatorViewController ()
 
@@ -35,6 +37,8 @@
 
 @property (nonatomic, strong) UIScreen *secondaryScreen;
 @property (nonatomic, strong) UIWindow *secondaryWindow;
+
+@property (nonatomic, strong) PVCheatManager* cheatManager;
 
 
 @end
@@ -144,6 +148,8 @@ void uncaughtExceptionHandler(NSException *exception)
     [self.emulatorCore setController1:[[PVControllerManager sharedManager] player1]];
     [self.emulatorCore setController2:[[PVControllerManager sharedManager] player2]];
 	
+    self.cheatManager = [[PVCheatManager alloc] initWithGame:self.game andCore:self.emulatorCore];
+    
 	self.glViewController = [[PVGLViewController alloc] initWithEmulatorCore:self.emulatorCore];
 
     if ([[UIScreen screens] count] > 1)
@@ -281,6 +287,7 @@ void uncaughtExceptionHandler(NSException *exception)
 #if !TARGET_OS_TV
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 #endif
+    [self.emulatorCore setPauseEmulation:NO];
 }
 
 - (NSString *)documentsPath
@@ -441,6 +448,11 @@ void uncaughtExceptionHandler(NSException *exception)
 					   withObject:nil
 					   afterDelay:0.1];
 	}]];
+    [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cheats" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf performSelector:@selector(showCheats)
+                       withObject:nil
+                       afterDelay:0.1];
+    }]];
 	[actionsheet addAction:[UIAlertAction actionWithTitle:@"Load State" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 		[weakSelf performSelector:@selector(showLoadStateMenu)
 					   withObject:nil
@@ -496,6 +508,13 @@ void uncaughtExceptionHandler(NSException *exception)
         [self.emulatorCore setPauseEmulation:NO];
         self.isShowingMenu = NO;
     }
+}
+
+- (void)showCheats
+{
+    PVCheatsTableViewController* vc = [[PVCheatsTableViewController alloc] initWithCheatManager:self.cheatManager];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)showSaveStateMenu
